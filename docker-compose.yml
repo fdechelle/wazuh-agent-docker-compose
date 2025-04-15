@@ -1,0 +1,9 @@
+name: wazuh
+
+include:
+  - ${WAZUH_DOCKER:?FOO}
+
+services:
+  wazuh.agent:
+    build:
+      context: "containers/"
