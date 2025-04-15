@@ -1,1 +1,8 @@
 .env
+containers/syslog-ng/files/config/syslog-ng.persist
+containers/syslog-ng/files/config/syslog-ng copy.conf
+containers/syslog-ng/files/config/syslog-ng.pid
+containers/syslog-ng/files/config/log/current
+containers/syslog-ng/files/config/log/lock
+containers/syslog-ng/files/config/log/state
+containers/syslog-ng/files/config/log/syslog-ng.log

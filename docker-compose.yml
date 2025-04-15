@@ -6,4 +6,18 @@ include:
 services:
   wazuh.agent:
     build:
-      context: "containers/"
+      context: "containers/wazuh-agent"
+  syslog-ng:
+    image: lscr.io/linuxserver/syslog-ng:latest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - LOG_TO_STDOUT= #optional
+    volumes:
+      - ./containers/syslog-ng/files/config:/config
+    ports:
+      - 5514:5514/udp
+      - 6514:6514/tcp
+      - 6601:6601/tcp
+    restart: unless-stopped
