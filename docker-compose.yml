@@ -7,8 +7,9 @@ services:
   wazuh.agent:
     build:
       context: "containers/wazuh-agent"
-  syslog-ng:
+  syslog:
     image: lscr.io/linuxserver/syslog-ng:latest
+    hostname: wazuh.syslog
     environment:
       - PUID=1000
       - PGID=1000
